@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+public class Launcher extends Application {
 
     private static Stage primaryStage;
     private static Map<String, Object> controllers = new HashMap<>();
@@ -20,6 +21,7 @@ import java.util.Map;
     }
 
     public static void setRoot(String fxml) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Launcher.class.getResource(fxml + ".fxml"));
         Scene scene = new Scene(loader.load());
         primaryStage.setScene(scene);
         controllers.put(fxml, loader.getController());
