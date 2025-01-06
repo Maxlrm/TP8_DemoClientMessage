@@ -1,4 +1,4 @@
-import org.maxmessageservice.demo.Launcher;
+package org.maxmessageservice.demo;
 
 public class Main {
     public static void main(String[] args) {
