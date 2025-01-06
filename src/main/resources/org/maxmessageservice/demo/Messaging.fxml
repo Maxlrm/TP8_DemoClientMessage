@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
-</AnchorPane>
+<GridPane fx:controller="org.maxmessageservice.demo.MessagingController"
+          xmlns:fx="http://javafx.com/fxml" alignment="CENTER" hgap="10" vgap="10">
+    <HBox spacing="10" GridPane.rowIndex="0" GridPane.columnSpan="2">
+        <Button text="Messages Reçus" onAction="#showReceivedMessages"/>
+        <Button text="Messages Envoyés" onAction="#showSentMessages"/>
+    </HBox>
+    <ListView fx:id="messageList" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+    <TextArea fx:id="messageContent" GridPane.rowIndex="2" GridPane.columnSpan="2"/>
+    <TextField fx:id="recipientField" GridPane.rowIndex="3"/>
+    <Button text="Send" onAction="#sendMessage" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Button text="Delete" onAction="#deleteMessage" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <Button text="Logout" onAction="#logout" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+</GridPane>
